@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .gallery-mobil {
+            margin-top: 100px;
+        }
+
+        .colors {
+            padding: 5px 15px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: white;
+        }
+
+        .yellow {
+            background-color: black;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .active {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" id="file" name="file" />
+
+    <p class="paragraph">If you click on me, I will disappear.</p>
+    <p class="paragraph">Click me away!</p>
+    <p class="paragraph2">Click me away!</p>
+
+    <button id="btn-hide" class="background-red">Hide Text</button>
+    <button id="btn-show">Show Text</button>
+
+    <button id="btn-toggle">Show</button>
+    <button id="btn-add-class">Add Class</button>
+    <button id="btn-remove-class">Remove Class</button>
+    <button id="btn-add-background">Add Background</button>
+
+    <div class="gallery-mobil">
+    <div id="tab">
+        <nav>
+            <a href="#" class="active" data-id='1'><span class="colors red">Red</span></a>
+        <a href=" #" data-id='2'><span class="colors white">White</span></a>
+            <a href="#" data-id='3'><span class="colors black">Black</span></a>
+        </nav>
+
+        <div class="tab-content active" data-content='1'>
+            <img src="red.webp"/>
+        </div>
+        <div class="tab-content" data-content='2'>
+            <img src="white.webp"/>
+        </div>
+        <div class="tab-content" data-content='3'>
+            <img src="black.webp"/>
+        </div>
+        </div>
+    </div>
+    <input type="text"/>
+    <p class="test">Test</p>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $(".paragraph").hide(500);
+            });
+            $("#btn-show").click(function () {
+                $(".paragraph").show(500);
+            });
+            $("#btn-toggle").click(function () {
+                $(".paragraph2").slidetoggle(500);
+            });
+            $("#btn-collapse").click(function () {
+                $(".paragraph2").addClass(".collapse")
+            });
+            $("#btn-collapse").click(function () {
+                $(".paragraph2").addClass(".collapse")
+            });
+            $("#btn-add-background").click(function () {
+                $(".paragraph2").addClass("background-red")
+            });
+        });
+
+    </script>
+</body>
+
+</html>
